@@ -1,7 +1,12 @@
-﻿namespace Colegio.Infra
-{
-    public class ColegioContext
-    {
+﻿using Colegio.Core.Models;
+using Microsoft.EntityFrameworkCore;
 
+namespace Colegio.Infra
+{
+    public class ColegioContext: DbContext
+    {
+        public ColegioContext(DbContextOptions<ColegioContext> options): base(options) { }
+
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }

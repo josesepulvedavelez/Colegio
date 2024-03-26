@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Colegio.Core.Interfaces
+namespace Colegio.Infra.Repositories
 {
-    public interface IPension
+    public class MatriculaRepository
     {
     }
 }
