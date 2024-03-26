@@ -16,6 +16,7 @@ builder.Services.AddDbContext<ColegioContext>(options =>
 });
 
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IGradoRepository, GradoRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
