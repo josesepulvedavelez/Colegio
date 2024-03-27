@@ -9,5 +9,6 @@ namespace Colegio.Infra
 
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Grado> Grado { get; set; }
+        public DbSet<Estudiante> Estudiante { get; set; }
     }
 }

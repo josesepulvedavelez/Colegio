@@ -19,25 +19,25 @@ namespace Colegio.Api.Controllers
         [HttpGet("ConsultarGrados")]
         public async Task<IActionResult> ConsultarGrados()
         { 
-            var grados = await _gradoRepository.ConsultarGrados();
+            var result = await _gradoRepository.ConsultarGrados();
 
-            return Ok(grados);
+            return Ok(result);
         }
 
         [HttpPost("GuardarGrado")]
         public async Task<IActionResult> GuardarGrado(Grado grado)
         {
-            var gradox = await _gradoRepository.GuardarGrado(grado);
+            var result = await _gradoRepository.GuardarGrado(grado);
 
-            return Ok(gradox);
+            return Ok(result);
         }
 
         [HttpPut("ActualizarGrado")]
         public async Task<IActionResult> ActualizarGrado(int id, Grado grado)
         { 
-            var gradox = await _gradoRepository.ActualizarGrado(id, grado);
+            var result = await _gradoRepository.ActualizarGrado(id, grado);
 
-            return Ok(gradox);
+            return Ok(result);
         }
 
     }

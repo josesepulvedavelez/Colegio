@@ -21,9 +21,9 @@ namespace Colegio.Infra.Repositories
 
         public async Task<IEnumerable<Grado>> ConsultarGrados()
         {
-            var grados = await _colegioContext.Grado.ToListAsync();
+            var result = await _colegioContext.Grado.ToListAsync();
 
-            return grados;
+            return result;
         }
 
         public async Task<int> GuardarGrado(Grado grado)

@@ -17,8 +17,8 @@ namespace Colegio.Api.Controllers
         [HttpGet("IniciarSesion/{usuario}/{contrasena}")]
         public async Task<IActionResult> IniciarSesion(string usuario, string contrasena)
         {
-            var usuariox = await _usuarioRepository.IniciarSesion(usuario, contrasena);
-            return Ok(usuariox);
+            var result = await _usuarioRepository.IniciarSesion(usuario, contrasena);
+            return Ok(result);
         }
 
     }

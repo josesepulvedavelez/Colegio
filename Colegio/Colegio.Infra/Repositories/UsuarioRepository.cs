@@ -21,18 +21,18 @@ namespace Colegio.Infra.Repositories
 
         public async Task<bool> IniciarSesion(string usuario, string contrasena)
         {
-            var usuariox = await _colegioContext.Usuario
+            var result = await _colegioContext.Usuario
                                  .FirstOrDefaultAsync(x => x.NombreUsuario == usuario &&
                                                       x.Contrasena == contrasena);
-            if (usuariox != null)
+            if (result != null)
             {
-                UsuarioDto.NombreUsuario = usuariox.NombreUsuario;
-                UsuarioDto.Nivel = usuariox.Nivel;
-                UsuarioDto.Estado = usuariox.Estado;
-                UsuarioDto.UsuarioId = usuariox.UsuarioId;
+                UsuarioDto.NombreUsuario = result.NombreUsuario;
+                UsuarioDto.Nivel = result.Nivel;
+                UsuarioDto.Estado = result.Estado;
+                UsuarioDto.UsuarioId = result.UsuarioId;
             }
 
-            return usuariox != null;
+            return result != null;
         }
 
     }
