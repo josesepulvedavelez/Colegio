@@ -16,6 +16,10 @@ namespace Colegio.Api.Controllers
             _gradoRepository = gradoRepository;
         }
 
+        /// <summary>
+        /// Lista de todos los grados
+        /// </summary>
+        /// <returns>Lista de todos los grados</returns>
         [HttpGet("ConsultarGrados")]
         public async Task<IActionResult> ConsultarGrados()
         { 
