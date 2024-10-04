@@ -5,8 +5,10 @@ use Colegio;
 create table Grado
 (	
 	GradoNombre varchar(50),
-
-	Observaciones varchar(MAX),
+	ValorMatricula money,
+	OtrosCostos money,
+	ValorPension money,
+	Observaciones varchar(MAX),	
 	Estado bit,
 	GradoId int identity(1, 1) primary key,
 );
@@ -21,7 +23,7 @@ create table Estudiante
 	Ti varchar(20),
 	Direccion varchar(MAX),
 	Telefono varchar(10),
-	Talla char,
+	Talla varchar(5),
 	Peso decimal(3, 2),
 	Barrio varchar(100),
 	Localidad varchar(50),
@@ -68,18 +70,24 @@ create table Matricula
 
 create table Pago
 (
-	Fecha date,	
-	Motivo money, --> Matricula, Pension, Otros costos
-	Monto money,
-	Tipo varchar(20), --> Transferencia, efectivo, consignacion
-
+	Fecha date,
+	Matricula money,
+	OtrosCostos money,
+	Pension money,	
 	Observaciones varchar(MAX),
 	Estado bit,
 	MatriculaId int foreign key references Matricula(MatriculaId),
-	PensionId int identity(1, 1) primary key
+	PagoId int identity(1, 1) primary key
 );
 
-DECLARE @FechaInicio DATE = '2022-06-15';
-DECLARE @FechaFinal DATE = '2022-11-14';
+create table Usuario
+(
+	NombreUsuario varchar(15) unique,
+	Contrasena varchar(10),
+	Nivel varchar(30),
 
-SELECT DATEDIFF(MONTH, @FechaInicio, @FechaFinal) AS DiferenciaEnDias;
+	Estado bit,
+	UsuarioId int identity(1, 1) primary key
+);
+
+

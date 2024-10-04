@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Colegio.Infra.Repositories
 {
-    public class IPensionRepository
+    public class PensionRepository
     {
     }
 }

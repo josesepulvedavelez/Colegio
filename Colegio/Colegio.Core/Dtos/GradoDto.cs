@@ -5,15 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Colegio.Core.Models
+namespace Colegio.Core.Dtos
 {
-    public class Grado
+    public class GradoDto
     {
-        public string GradoNombre { get; set; }
-        public string Observaciones { get; set;}
+        public string Observaciones { get; set; }
         public bool Estado { get; set; }
 
-        [Key]
         public int GradoId { get; set; }
     }
 }

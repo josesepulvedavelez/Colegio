@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace Colegio.Core.Interfaces
 {
-    public interface IGradoRepository
+    public interface IUsuarioRepository
     {
-        Task<IEnumerable<Grado>> ConsultarGrados();
-        Task<int> GuardarGrado(Grado grado);
-        Task<int> ActualizarGrado(int id, Grado gradoActualizado);
+        Task<bool> IniciarSesion(string usuario, string contrasena);
     }
 }
